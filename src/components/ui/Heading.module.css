@@ -1,0 +1,81 @@
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-brand);
+  margin-bottom: var(--space-xs);
+}
+
+.light {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.heading {
+  margin-bottom: var(--space-l);
+}
+
+.title {
+  max-width: 18ch;
+}
+
+.copy {
+  color: var(--c-text);
+  font-size: var(--text-s);
+}
+
+.copy > * + * {
+  margin-top: 0.8em;
+}
+
+.copy strong {
+  font-weight: 600;
+}
+
+/* Title left, copy right — the House of Om section intro */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-l);
+  align-items: end;
+}
+
+.split .copy {
+  padding-bottom: 0.4em;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .title {
+  margin-inline: auto;
+  max-width: 22ch;
+}
+
+.center .copy {
+  max-width: 62ch;
+  margin: var(--space-s) auto 0;
+}
+
+.left .copy {
+  max-width: 62ch;
+  margin-top: var(--space-s);
+}
+
+.lightHeading .title,
+.lightHeading .copy {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-s);
+  }
+
+  .title {
+    max-width: none;
+  }
+}

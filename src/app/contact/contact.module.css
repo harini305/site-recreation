@@ -1,0 +1,81 @@
+.cardLink {
+  margin-top: 10px;
+}
+
+.details {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.details dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-brand);
+}
+
+.details dd {
+  margin: 4px 0 0 26px;
+}
+
+.details a {
+  color: inherit;
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-s);
+  margin: 0;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--c-border);
+  background: #fff;
+  color: var(--c-text);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) ease;
+}
+
+.socials a:hover {
+  border-color: var(--c-brand);
+}
+
+.socials svg {
+  flex-shrink: 0;
+  color: var(--c-brand);
+}
+
+.socials span {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.socials strong {
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+@media (max-width: 1023px) {
+  .socials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 479px) {
+  .socials {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

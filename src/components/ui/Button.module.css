@@ -1,0 +1,115 @@
+.btn {
+  --btn-bg: var(--c-accent);
+  --btn-bg-hover: var(--c-accent-hover);
+  --btn-fg: var(--c-on-accent);
+  --btn-border: var(--btn-bg);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
+  min-height: 48px;
+  padding: 0.7em 1.5em;
+  border-radius: var(--radius-btn);
+  border: 2px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease,
+    border-radius var(--dur-fast) ease;
+}
+
+.btn:hover {
+  background: var(--btn-bg-hover);
+  border-color: var(--btn-bg-hover);
+  box-shadow: var(--shadow-l);
+  border-radius: 16px;
+}
+
+.arrow {
+  transition: transform var(--dur-fast) ease;
+}
+
+.btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.large {
+  min-height: 56px;
+  padding: 0.85em 1.9em;
+  font-size: var(--text-s);
+}
+
+.brand {
+  --btn-bg: var(--c-brand);
+  --btn-bg-hover: var(--c-brand-dark);
+  --btn-fg: #fff;
+}
+
+.outline {
+  --btn-bg: transparent;
+  --btn-bg-hover: var(--c-brand);
+  --btn-fg: var(--c-brand);
+  --btn-border: var(--c-brand);
+}
+
+.outline:hover {
+  color: #fff;
+}
+
+.glass {
+  --btn-bg: rgba(255, 255, 255, 0.12);
+  --btn-bg-hover: rgba(255, 255, 255, 0.24);
+  --btn-fg: #fff;
+  --btn-border: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.light {
+  --btn-bg: #fff;
+  --btn-bg-hover: var(--c-bg);
+  --btn-fg: var(--c-ink);
+}
+
+.text {
+  --btn-bg: transparent;
+  --btn-bg-hover: transparent;
+  --btn-fg: var(--c-brand);
+  --btn-border: transparent;
+  min-height: 0;
+  padding: 0.25em 0;
+  border-width: 0;
+}
+
+.text:hover {
+  box-shadow: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.center {
+  justify-content: center;
+}
+
+@media (max-width: 479px) {
+  .row:not(.center) > .btn:not(.text) {
+    flex: 1 1 100%;
+  }
+}

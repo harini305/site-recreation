@@ -1,0 +1,7 @@
+.gallery {
+  padding-bottom: var(--section-pad);
+}
+
+.shot {
+  border-radius: var(--radius-card);
+}

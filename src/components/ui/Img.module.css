@@ -1,0 +1,21 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-sage-tint);
+  width: 100%;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+}
+
+.img {
+  transition: transform var(--dur-slow) var(--ease-image);
+}
+
+.parallax {
+  /* extra room so the parallax never exposes the frame edge */
+  inset: -8% 0 !important;
+  height: 116% !important;
+}

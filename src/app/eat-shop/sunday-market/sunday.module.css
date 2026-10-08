@@ -1,0 +1,24 @@
+/* Three equal photo cards: same width, same height, tops and bottoms aligned. */
+.collage {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: clamp(280px, 28vw, 420px);
+  gap: var(--space-s);
+}
+
+.cell {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.img {
+  border-radius: var(--radius-card);
+}
+
+@media (max-width: 767px) {
+  .collage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: clamp(220px, 64vw, 320px);
+  }
+}

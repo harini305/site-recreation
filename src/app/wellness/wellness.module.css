@@ -1,0 +1,39 @@
+.anchor {
+  scroll-margin-top: calc(var(--header-h) + 20px);
+}
+
+.anchor + .anchor {
+  margin-top: var(--space-s);
+}
+
+.pricing {
+  display: grid;
+  gap: 0;
+  margin: var(--space-s) 0 0;
+  padding: 4px 16px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.pricing div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 10px 0;
+  font-size: 0.94rem;
+}
+
+.pricing div + div {
+  border-top: 1px dotted var(--c-border);
+}
+
+.pricing dt {
+  color: var(--c-muted);
+}
+
+.pricing dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--c-brand);
+}

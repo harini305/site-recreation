@@ -1,0 +1,21 @@
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-s);
+  margin: 0;
+}
+
+.tile {
+  border-radius: var(--radius-card);
+}
+
+.tile img {
+  transition: transform 1.2s var(--ease-image);
+}
+
+@media (max-width: 767px) {
+  .categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}

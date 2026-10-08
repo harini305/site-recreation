@@ -1,0 +1,320 @@
+.header {
+  --fg: var(--c-ink);
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--z-header);
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--c-border-soft);
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Transparent over a full-bleed hero (any page that renders [data-overlay-hero]) */
+:global(body:has([data-overlay-hero])) .header:not([data-scrolled="true"]) {
+  --fg: #fff;
+  background: transparent;
+  border-color: transparent;
+}
+
+.header[data-scrolled="true"] {
+  --fg: #fff;
+  background: var(--c-overlay);
+  border-color: transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  height: var(--header-h);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  transition: transform var(--dur-medium) var(--ease-out);
+}
+
+.logo:hover img {
+  transform: rotate(-12deg);
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.wordmark span {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+}
+
+.wordmark small {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* ---------- Desktop nav ---------- */
+.nav {
+  margin-left: auto;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 1.2vw, 18px);
+  margin: 0;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  position: relative;
+  padding: 10px 2px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--dur-medium) var(--ease-out);
+}
+
+.navLink:hover::after,
+.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.caret {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 32px;
+  color: inherit;
+}
+
+.caret[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.caret svg {
+  transition: transform var(--dur-fast) ease;
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 200px;
+  gap: 8px;
+  width: max-content;
+  padding: 10px;
+  border-radius: var(--radius-card);
+  background: #fff;
+  color: var(--c-text);
+  box-shadow:
+    0 24px 60px -20px rgba(0, 0, 0, 0.3),
+    var(--shadow-s);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 8px);
+  transition:
+    opacity var(--dur-fast) ease,
+    transform var(--dur-medium) var(--ease-out),
+    visibility 0s linear var(--dur-fast);
+}
+
+.panel[data-align="end"] {
+  left: auto;
+  right: -12px;
+  transform: translateY(8px);
+}
+
+.panel[data-align="end"][data-open="true"] {
+  transform: none;
+}
+
+.panel::before {
+  /* hover bridge between the link and the panel */
+  content: "";
+  position: absolute;
+  inset: -16px 0 auto;
+  height: 16px;
+}
+
+.panel[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition:
+    opacity var(--dur-fast) ease,
+    transform var(--dur-medium) var(--ease-out),
+    visibility 0s;
+}
+
+.panelList {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+}
+
+.panelLink {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color var(--dur-fast) ease;
+}
+
+.panelLink:hover,
+.panelLink:focus-visible {
+  background: var(--c-surface-alt);
+}
+
+.panelLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 0.98rem;
+  color: var(--c-ink);
+}
+
+.panelDesc {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.82rem;
+  color: var(--c-muted);
+}
+
+.panelMedia {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+/* ---------- Actions ---------- */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.book {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: var(--radius-btn);
+  background: var(--c-accent);
+  color: var(--c-on-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-fast) ease,
+    border-radius var(--dur-fast) ease;
+}
+
+.book:hover {
+  background: var(--c-accent-hover);
+  border-radius: 16px;
+}
+
+.menuButton {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: inherit;
+  transition: background-color var(--dur-fast) ease;
+}
+
+.menuButton:hover {
+  background: rgba(127, 127, 127, 0.15);
+}
+
+/* The full menu drawer is a mobile/tablet pattern — desktop uses the inline navigation. */
+@media (min-width: 1024px) {
+  .menuButton {
+    display: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .wordmark {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .nav {
+    display: none;
+  }
+
+  .actions {
+    margin-left: auto;
+  }
+
+  .logo img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .wordmark {
+    display: flex;
+  }
+}
+
+@media (max-width: 420px) {
+  .book {
+    padding: 0 14px;
+    font-size: 0.84rem;
+  }
+
+  .wordmark {
+    display: none;
+  }
+}

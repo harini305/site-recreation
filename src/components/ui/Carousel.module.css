@@ -1,0 +1,130 @@
+.root {
+  --gap: var(--space-m);
+  --pv: var(--pv-base);
+  position: relative;
+}
+
+.track {
+  /* positioned so absolutely-positioned descendants (e.g. visually-hidden text) stay inside the scroller */
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - var(--gap) * (var(--pv) - 1)) / var(--pv));
+  column-gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track:focus-visible {
+  outline-offset: 6px;
+}
+
+.slide {
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--c-ink);
+  border: 1px solid var(--c-ink);
+  transform: translateY(-50%);
+  transition:
+    background-color var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    opacity var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
+}
+
+.arrow:hover:not(:disabled) {
+  background: var(--c-ink);
+  color: #fff;
+}
+
+.arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.prev {
+  left: calc(-1 * clamp(10px, 4vw, 60px));
+}
+
+.next {
+  right: calc(-1 * clamp(10px, 4vw, 60px));
+}
+
+.light .arrow {
+  border-color: #fff;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--space-m);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-border);
+  transition:
+    background-color var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
+}
+
+.dot[aria-current="true"] {
+  background: var(--c-brand);
+  transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  .root {
+    --pv: var(--pv-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .root {
+    --pv: var(--pv-lg);
+  }
+}
+
+@media (max-width: 1359px) {
+  .prev {
+    left: -8px;
+  }
+
+  .next {
+    right: -8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .root {
+    --gap: 14px;
+  }
+
+  .arrow {
+    display: none;
+  }
+}

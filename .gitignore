@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# original downloads (optimised copies live in public/)
+.assets-raw/
+.assets-fetch.log
+
+# env / os
+.env*
+.DS_Store
+Thumbs.db
+npm-debug.log*
+.vercel
+
+# local server logs
+.dev.log
+.prod.log

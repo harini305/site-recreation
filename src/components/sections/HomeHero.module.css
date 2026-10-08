@@ -1,0 +1,136 @@
+.hero {
+  position: relative;
+  min-height: var(--hero-h);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--c-ink);
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(10, 10, 10, 0.25) 0%, rgba(10, 10, 10, 0.55) 80%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.45) 0%, rgba(10, 10, 10, 0.1) 30%, rgba(10, 10, 10, 0.5) 100%);
+}
+
+.inner {
+  position: relative;
+  text-align: center;
+  /* centre the copy in the space below the header */
+  padding-top: calc(var(--header-h) + var(--space-m));
+  padding-bottom: var(--space-m);
+}
+
+.eyebrow {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.92;
+}
+
+.title {
+  margin-top: var(--space-xs);
+  font-size: clamp(3.6rem, 2.6rem + 4.6vw, 7rem);
+  line-height: 1;
+  color: #fff;
+}
+
+.subtitle {
+  margin-top: var(--space-2xs);
+  font-family: var(--font-display);
+  font-size: var(--h2);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 46ch;
+  margin: var(--space-s) auto var(--space-m);
+  font-size: var(--text-s);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.trust {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-s);
+  max-width: 980px;
+  margin: var(--space-xl) auto 0;
+  padding: 0;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-glass);
+  background: var(--c-glass);
+  border: 1px solid var(--c-glass-border);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 0.9rem;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.trustItem svg {
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+/* .hero prefix: must out-rank ScrollCue's own `position: relative` */
+.hero .cue {
+  position: absolute;
+  right: var(--gutter);
+  bottom: var(--space-m);
+  z-index: 1;
+}
+
+@media (max-width: 1023px) {
+  .trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 640px;
+  }
+
+  .hero .cue {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    padding-bottom: var(--space-l);
+  }
+
+  .trust {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: var(--space-l);
+  }
+
+  .trustItem {
+    padding: 12px 14px;
+  }
+}

@@ -1,0 +1,43 @@
+.priceCard {
+  margin-top: var(--space-xl);
+}
+
+.backdropCta {
+  margin-top: var(--space-l);
+}
+
+.afterFan {
+  margin-top: var(--space-m);
+}
+
+.bandCta {
+  margin-top: var(--space-l);
+}
+
+.miniStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-m) var(--space-l);
+  margin: var(--space-m) 0;
+  padding: var(--space-s) 0;
+  border-block: 1px solid var(--c-border);
+}
+
+.miniStats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.miniStats dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  line-height: 1;
+  color: var(--c-brand);
+}
+
+.miniStats dt {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--c-muted);
+}

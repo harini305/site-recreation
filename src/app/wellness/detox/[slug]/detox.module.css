@@ -1,0 +1,19 @@
+.heroPanel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-s) var(--space-l);
+}
+
+.heroPrice {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
+
+.closingPrice {
+  margin-bottom: var(--space-s);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--c-brand);
+}
