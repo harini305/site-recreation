@@ -63,7 +63,8 @@ original) only loads when a visitor presses play; `training/film-*` stills were 
 
 `/` · `/about` · `/spaces` · `/yoga` · `/yoga/schedule` · `/yoga/teachers` · `/yoga/private` · `/events` ·
 `/teacher-training` · `/wellness` · `/wellness/detox` · `/wellness/detox/[3-day|5-day|7-day|7-day-liver|10-day|14-day|21-day]` ·
-`/wellness/ayurveda` · `/wellness/theta-healing` · `/eat-shop/restaurant` · `/eat-shop/market` · `/eat-shop/sunday-market` ·
+`/wellness/ayurveda` · `/wellness/theta-healing` · `/eat-shop/restaurant` · `/eat-shop/market` · `/eat-shop/shop` ·
+`/eat-shop/sunday-market` ·
 `/journal` · `/journal/[slug]` · `/faq` · `/contact` · `/privacy-policy` · `/disclaimer`
 
 Old samadibali.com URLs (e.g. `/about-us`, `/yoga-schedules`, `/3-days-detox-program`, `/wytt-…`) 308-redirect to their new

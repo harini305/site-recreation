@@ -26,7 +26,7 @@ const legacy: [string, string][] = [
   ["/restaurant-2", "/eat-shop/restaurant"],
   ["/super-market", "/eat-shop/market"],
   ["/sunday-market", "/eat-shop/sunday-market"],
-  ["/shop", "/eat-shop/market"],
+  ["/shop", "/eat-shop/shop"],
   ["/blog", "/journal"],
   ["/latest-news", "/journal"],
   ["/yoga-at-samadi-bali-a-practice-for-all-levels", "/journal/yoga-at-samadi-bali-a-practice-for-all-levels"],
@@ -46,6 +46,8 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     qualities: [75, 85, 90],
     imageSizes: [64, 128, 256, 384, 512],
+    // Product photos for the on-site shop come from the store's Olsera CDN.
+    remotePatterns: [{ protocol: "https", hostname: "d1d8o7q9jg8pjk.cloudfront.net", pathname: "/p/**" }],
     deviceSizes: [360, 390, 640, 768, 828, 1024, 1280, 1440, 1920, 2560],
   },
   async redirects() {

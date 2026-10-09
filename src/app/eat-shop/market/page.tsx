@@ -31,7 +31,7 @@ export default function MarketPage() {
         lead={market.intro}
         actions={
           <>
-            <Button href="#shop-online" size="l">
+            <Button href="/eat-shop/shop" size="l">
               Shop online
             </Button>
             <Button href={site.mapsHref} variant="glass" size="l" icon="pin">
@@ -142,8 +142,8 @@ export default function MarketPage() {
             title="Bali’s Freshest Picks — Just a Click Away"
             actions={
               <>
-                <Button href={site.shopOnlineHref} variant="brand">
-                  Open the online store
+                <Button href="/eat-shop/shop" variant="brand" icon="basket">
+                  Start shopping
                 </Button>
                 <Button href={site.whatsappHref} variant="outline" icon="whatsapp">
                   Order questions
@@ -153,8 +153,8 @@ export default function MarketPage() {
           >
             <p>
               Get the best of Bali’s fresh produce and daily essentials delivered straight to your door. Trusted by
-              locals and expats alike, SamadiSupermarket.com offers everything you need — fresh, fast, and just a few
-              clicks away. The store opens in a new tab, so you can come straight back here.
+              locals and expats alike, our online shop offers everything you need — fresh, fast, and just a few clicks
+              away. Fill your basket here and send the order straight to the market team on WhatsApp.
             </p>
           </ShadowCard>
         </div>

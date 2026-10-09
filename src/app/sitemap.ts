@@ -19,6 +19,7 @@ const staticRoutes = [
   "/wellness/theta-healing",
   "/eat-shop/restaurant",
   "/eat-shop/market",
+  "/eat-shop/shop",
   "/eat-shop/sunday-market",
   "/journal",
   "/faq",

@@ -332,7 +332,7 @@ export default function HomePage() {
               <Button href="/eat-shop/market" variant="brand">
                 Discover the market
               </Button>
-              <Button href="/eat-shop/market#shop-online" variant="text">
+              <Button href="/eat-shop/shop" variant="text">
                 Shop online
               </Button>
             </ButtonRow>

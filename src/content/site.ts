@@ -20,7 +20,8 @@ export const site = {
   },
   mapsHref: "https://maps.app.goo.gl/GdrR5ZdKrYN1vu4PA",
   marketHours: "Open daily, 7.30 – 21.30",
-  shopOnlineHref: "https://samadisupermarket.com",
+  /** Samadi Supermarket's own WhatsApp line — online shop orders go here. */
+  marketWhatsapp: "6287774259604",
   bookingHref: "https://megatix.co.id/events?search=SAMADI",
   zenwelHref: "https://widget.zenwel.com/863947864/samadi-yoga-centre?lang=id&lid=527",
   socials: [
@@ -73,7 +74,7 @@ export const mainNav: NavGroup[] = [
       { label: "Café Restaurant", href: "/eat-shop/restaurant", description: "Plant-based garden dining" },
       { label: "Super Foods Market", href: "/eat-shop/market", description: "Organic groceries & bakery" },
       { label: "Sunday Farmers Market", href: "/eat-shop/sunday-market", description: "Every Sunday in Canggu" },
-      { label: "Shop Online", href: "/eat-shop/market#shop-online", description: "Order from our online supermarket" },
+      { label: "Shop Online", href: "/eat-shop/shop", description: "Order from our online supermarket" },
     ],
   },
   {
@@ -117,7 +118,7 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
       { label: "Café Restaurant", href: "/eat-shop/restaurant" },
       { label: "Super Foods Market", href: "/eat-shop/market" },
       { label: "Sunday Farmers Market", href: "/eat-shop/sunday-market" },
-      { label: "Shop Online", href: "/eat-shop/market#shop-online" },
+      { label: "Shop Online", href: "/eat-shop/shop" },
     ],
   },
   {

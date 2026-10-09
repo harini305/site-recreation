@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "assets:fetch": "node scripts/fetch-assets.mjs",
-    "assets:optimize": "node scripts/optimize-images.mjs"
+    "assets:optimize": "node scripts/optimize-images.mjs",
+    "shop:fetch": "node scripts/fetch-shop.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
