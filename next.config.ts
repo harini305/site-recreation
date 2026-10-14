@@ -43,6 +43,9 @@ const legacy: [string, string][] = [
 
 const nextConfig: NextConfig = {
   images: {
+    // Image Optimization is switched off (Vercel Hobby image-transformation quota): next/image serves
+    // the original files as-is. The settings below stay in place for if it is switched back on.
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     qualities: [75, 85, 90],
     imageSizes: [64, 128, 256, 384, 512],
